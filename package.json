@@ -3,6 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "description": "EmberAI storytelling platform monorepo",
+  "packageManager": "pnpm@10.28.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "check": "pnpm run check:integrity && pnpm -r --if-present run typecheck && pnpm -r --if-present run test",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "test": "pnpm -r --if-present run test",
+    "clean": "rm -rf apps/*/dist packages/*/dist",
+    "check:integrity": "node scripts/check-repository-integrity.mjs"
   "packageManager": "npm@11.4.2",
   "workspaces": [
     "apps/api",

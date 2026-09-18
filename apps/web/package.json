@@ -4,12 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "tsc -b",
     "dev": "vite",
     "build": "tsc -b --force && vite build",
     "typecheck": "tsc -b --pretty false",
     "test": "node --test dist/test/*.test.js"
   },
   "dependencies": {
+    "@emberai/domain": "workspace:*"
+  }
+}
     "@emberai/domain": "*"
   },
   "devDependencies": {

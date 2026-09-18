@@ -1,0 +1,110 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+
+  apps/api:
+    dependencies:
+      '@emberai/ai':
+        specifier: workspace:*
+        version: link:../../packages/ai
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
+      '@emberai/memory':
+        specifier: workspace:*
+        version: link:../../packages/memory
+
+  apps/web:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
+
+  packages/ai:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/anatomy:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/characters:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/core:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/domain: {}
+
+  packages/events:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/memory:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/research:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/shared:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/simulation:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/stories:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+  packages/worlds:
+    dependencies:
+      '@emberai/domain':
+        specifier: workspace:*
+        version: link:../domain
+
+packages:
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  typescript@5.9.3: {}

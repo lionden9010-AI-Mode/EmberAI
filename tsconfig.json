@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    {"path":"packages/domain"}, {"path":"packages/ai"}, {"path":"packages/memory"},
+    {"path":"apps/api"}, {"path":"apps/web"}
+  ]
+}

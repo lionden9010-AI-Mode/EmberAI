@@ -1,3 +1,4 @@
+ codex/bootstrap-emberai-monorepo-and-implement-foundation
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -5,6 +6,7 @@ plugins {
 
 android {
     namespace = "com.emberai.app"
+    compileSdk = 35
     // Android 16 is API 36. Android 17 (API 37) is installed in CI for forward-compatibility checks.
     compileSdk = 36
 

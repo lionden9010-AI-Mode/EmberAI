@@ -1,5 +1,6 @@
 # EmberAI Android
 
+ codex/bootstrap-emberai-monorepo-and-implement-foundation
 The Android application is a native, offline-first character and storytelling client. The initial home flow lets a user begin creating a character and establishes the privacy/local-generation product language.
 
 ## Android SDK support
@@ -13,6 +14,13 @@ CI provisions Android 16/17 platform SDKs with `sdkmanager` and Gradle 8.10.2 wi
 ## Local checks
 
 Configure an Android SDK using `ANDROID_HOME` (or `local.properties`), install `platforms;android-36`, and run:
+
+The Android app targets Java/Kotlin 17 and API 35. CI provisions Gradle 8.10.2 through `gradle/actions/setup-gradle`; no Gradle wrapper binary is committed so hosting systems that reject binary pull-request diffs remain compatible.
+
+## Local checks
+
+Install Gradle 8.10.2 (or use a compatible locally managed Gradle installation), then run:
+ main
 
 ```bash
 gradle :app:testDebugUnitTest :app:assembleDebug :app:bundleRelease

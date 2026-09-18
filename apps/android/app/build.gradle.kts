@@ -12,6 +12,7 @@ android {
         applicationId = "com.emberai.app"
         minSdk = 26
         targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -26,4 +27,10 @@ android {
 
 kotlin {
     jvmToolchain(17)
+
+plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
+
+android { namespace = "com.emberai.app"; compileSdk = 35
+    defaultConfig { applicationId = "com.emberai.app"; minSdk = 26; targetSdk = 35; versionCode = 1; versionName = "0.1.0"; testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" }
+ main
 }

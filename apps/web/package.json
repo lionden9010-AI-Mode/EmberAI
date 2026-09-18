@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc -b",
+    "build": "tsc -b --force && vite build",
     "typecheck": "tsc -b --pretty false",
     "test": "node --test dist/test/*.test.js"
   },
-  "dependencies": { "@emberai/domain": "*" },
-  "devDependencies": { "vite": "^7.1.7" }
+  "dependencies": {
+    "@emberai/domain": "*"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
+  }
 }

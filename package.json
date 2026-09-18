@@ -4,13 +4,20 @@
   "private": true,
   "description": "EmberAI storytelling platform monorepo",
   "packageManager": "npm@11.4.2",
-  "workspaces": ["apps/api", "apps/web", "packages/*"],
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "packages/*"
+  ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "check": "npm run typecheck --workspaces --if-present && npm run test --workspaces --if-present",
+    "check": "npm run check:conflicts && npm run typecheck --workspaces --if-present && npm run test --workspaces --if-present",
     "typecheck": "tsc -b",
     "test": "node --test packages/*/dist/test/*.test.js apps/*/dist/test/*.test.js",
-    "clean": "rm -rf apps/*/dist packages/*/dist"
+    "clean": "rm -rf apps/*/dist packages/*/dist",
+    "check:conflicts": "node scripts/check-no-conflict-markers.mjs"
   },
-  "devDependencies": {"typescript": "^5.7.3"}
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }

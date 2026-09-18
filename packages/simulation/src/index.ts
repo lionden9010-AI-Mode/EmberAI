@@ -1,0 +1,6 @@
+import type { Id } from "@emberai/domain";
+export interface SimulationSettings { enabled: boolean; time: boolean; biology: boolean; physics: boolean; travel: boolean; weather: boolean; economy: boolean; injuries: boolean; characterAutonomy: boolean; }
+export interface AutonomousActor { id: Id; locationId?: Id; goals: string[]; energy: number; activity?: "travel" | "work" | "sleep" | "meet" | "pursue-goal"; }
+export interface SimulationSnapshot { at: string; actors: AutonomousActor[]; notes: string[]; }
+/** Deterministic tick: the same snapshot and tick count produce the same result. */
+export function advanceSimulation(snapshot: SimulationSnapshot, settings: SimulationSettings, hours: number): SimulationSnapshot { if (!settings.enabled) return snapshot; const actors = snapshot.actors.map((actor, index) => { const activity = settings.characterAutonomy && actor.goals.length ? ["pursue-goal", "work", "meet"][index % 3] as AutonomousActor["activity"] : actor.activity; return { ...actor, activity, energy: Math.max(0, Math.min(100, actor.energy - (activity === "sleep" ? -hours * 8 : hours * 4))) }; }); return { at: new Date(new Date(snapshot.at).valueOf() + hours * 3_600_000).toISOString(), actors, notes: [...snapshot.notes, `${hours} simulated hour(s) elapsed.`] }; }

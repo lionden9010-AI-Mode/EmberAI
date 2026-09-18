@@ -1,7 +1,47 @@
 {
   "files": [],
   "references": [
-    {"path":"packages/domain"}, {"path":"packages/ai"}, {"path":"packages/memory"},
-    {"path":"apps/api"}, {"path":"apps/web"}
+    {
+      "path": "packages/domain"
+    },
+    {
+      "path": "packages/shared"
+    },
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/characters"
+    },
+    {
+      "path": "packages/stories"
+    },
+    {
+      "path": "packages/worlds"
+    },
+    {
+      "path": "packages/events"
+    },
+    {
+      "path": "packages/simulation"
+    },
+    {
+      "path": "packages/anatomy"
+    },
+    {
+      "path": "packages/research"
+    },
+    {
+      "path": "packages/ai"
+    },
+    {
+      "path": "packages/memory"
+    },
+    {
+      "path": "apps/api"
+    },
+    {
+      "path": "apps/web"
+    }
   ]
 }

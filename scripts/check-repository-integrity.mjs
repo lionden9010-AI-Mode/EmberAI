@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const conflictMarker = /^(?:<{7}|={7}|>{7})(?:\s|$)/m;
 const trackedFiles = execFileSync("git", ["ls-files", "-z"], { encoding: "buffer" })
@@ -10,6 +10,7 @@ const conflicts = [];
 const invalidJson = [];
 
 for (const file of trackedFiles) {
+  if (!existsSync(file)) continue;
   const content = readFileSync(file);
   if (!content.includes(0) && conflictMarker.test(content.toString("utf8"))) conflicts.push(file);
   if (file.endsWith(".json")) {

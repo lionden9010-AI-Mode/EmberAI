@@ -1,1 +1,16 @@
-{"name":"@emberai/stories","version":"0.1.0","private":true,"type":"module","exports":"./dist/index.js","types":"./dist/index.d.ts","scripts":{"build":"tsc -b","typecheck":"tsc -b --pretty false","test":"node --test dist/test/*.test.js"},"dependencies":{"@emberai/domain":"*"}}
+{
+  "name": "@emberai/stories",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b --pretty false",
+    "test": "node --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@emberai/domain": "workspace:*"
+  }
+}

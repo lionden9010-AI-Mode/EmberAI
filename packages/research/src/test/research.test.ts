@@ -1,1 +1,0 @@
-import test from "node:test"; import assert from "node:assert/strict"; import { canResearch } from "../index.js"; test("requires user research consent", () => assert.equal(canResearch({query:"weather",purpose:"scene",enabled:true,requiresFreshness:true},false),false));
